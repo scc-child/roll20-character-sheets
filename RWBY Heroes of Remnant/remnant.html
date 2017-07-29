@@ -72,7 +72,7 @@
         <h3 style="margin-bottom: 10px;">Skills</h3>
         
         <fieldset class="repeating_skills">
-            <table class="skills">
+            <table style="width: 100%;">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -137,6 +137,27 @@
                 </tr>
             </tbody>
         </table>
+		<h3 style="margin-bottom: 10px;">Inventory</h3>
+        
+        <fieldset class="repeating_inventory">
+            <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>#</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<td><input type="text" name="attr_itemname"/></td>
+							<td><input type="number" name="attr_itemno" /></td>
+							<td><input type="text" name="attr_itemdesc"/></td>
+						</tr>
+                    </tbody>
+                </table>
+        </fieldset>
+		
 	</div>
 
 	<div class="sheet-col">
