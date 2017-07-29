@@ -72,9 +72,22 @@
         <h3 style="margin-bottom: 10px;">Skills</h3>
         
         <fieldset class="repeating_skills">
-            <input type="text" name="attr_skillname"/>
-            <input type="number" name="attr_skilllevel" />
-            <textarea name="attr_skillperks"></textarea>
+            <table class="skills">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rank</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<td><input type="text" name="attr_skillname"/></td>
+							<td><input type="number" name="attr_skilllevel" /></td>
+							<td><textarea name="attr_skillperks"></textarea></td>
+						</tr>
+                    </tbody>
+                </table>
         </fieldset>
 
 	</div>
