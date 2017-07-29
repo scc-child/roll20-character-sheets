@@ -1,0 +1,142 @@
+<div class="sheet-3colrow">
+
+    <div class="sheet-col">
+
+    	<label>Name:</label><input type="text" name="attr_character_name" />
+		<label>Remaining XP:</label><input type="number" name="attr_xp" />
+		<label>Total XP Earned:</label><input type="number" name="attr_xp_max" />
+
+	</div>
+
+	<div class="sheet-col">
+		<p style="text-align: center;">
+			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 100px;" />
+		</p>
+	</div>
+
+	<div class="sheet-col">
+
+		<label>Race:</label><input type="text" name="attr_race" />
+		<label>Gender:</label><input type="text" name="attr_gender" />
+
+	</div>
+
+</div>
+
+<hr/>
+
+<div class="sheet-3colrow">
+
+	<div class="sheet-col">
+
+		<table width=100%>
+      <thead>
+      <tr>
+        <td>&nbsp;</td>
+        <td width=1>Value</td>
+        <td width=1>Bonus</td>
+      </tr>
+      </thead>
+      <tr>
+        <td>Soul</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_SOUL"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_SOLbonus" value="@{SOUL} - 10" disabled="true"/>
+      </tr>
+      <tr>
+        <td>Endurance</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_ENDURANCE"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_ENDbonus" value="@{ENDURANCE} - 10" disabled="true"/>
+      </tr>
+      <tr>
+        <td>Instinct</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_INSTINCT"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_INSbonus" value="@{INSTINCT} - 10" disabled="true"/>
+      </tr>
+      <tr>
+        <td>Dexterity</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_DEXTERITY"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_DEXbonus" value="@{DEXTERITY} - 10" disabled="true"/>
+      </tr>
+      <tr>
+        <td>Strength</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_STRENGTH"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_STRbonus" value="@{STRENGTH} - 10" disabled="true"/>
+      </tr>
+      <tr>
+        <td>Knowledge</td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_KNOWLEDGE"/></td>
+        <td><input type=number width=5 style='width: 5em;' name="attr_KNLbonus" value="@{KNOWLEDGE} - 10" disabled="true"/>
+      </tr>
+    </table>
+        
+        <h3 style="margin-bottom: 10px;">Skills</h3>
+        
+        <fieldset class="repeating_skills">
+            <input type="text" name="attr_skillname"/>
+            <input type="number" name="attr_skilllevel" />
+            <textarea name="attr_skillperks"></textarea>
+        </fieldset>
+
+	</div>
+
+	<div class="sheet-col">
+		<h3 style="text-align: center;">Derived Stats</h3>
+        
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Base</th>
+                    <th>Misc Mod</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Resistance</td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_ENDbonus" disabled="true"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_ResBonus" value="0"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_Resistance" value="@{ENDbonus} + @{ResBonus}" disabled="true"/>
+                </tr>
+                <tr>
+                    <td>Resolve</td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_BaseResolve" value="5 + @{ENDbonus}" disabled="true"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_InjBonus" value="0"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_Injuries_max" value="@{BaseResolve} + @{InjBonus}" disabled="true"/>
+                </tr>
+                <tr>
+                    <td>Aura Capacity</td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_SOUL" disabled="true"/>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_AuraBonus" value="0"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_Aura_max" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
+                </tr>
+                <tr>
+                    <td>Max Soul Points</td>
+                    <td>&nbsp;</td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_SPbonus" value="0"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_SoulPoints_max" value="1 + @{SPbonus}" disabled="true"/>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>&nbsp;</td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_SpeedBonus" value="0"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_Speed" value="1 + @{SpeedBonus}" disabled="true"/>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+
+	<div class="sheet-col">
+
+		<h3>Injuries</h3>
+        
+        <label>Total:</label><input type="number" name="attr_Injuries"/> <text>/ </text><input type="number" name="attr_Injuries_max" disabled="true"/>
+		<textarea name="attr_InjuryDetails"></textarea>
+		
+		<h3>Semblance</h3>
+
+		<textarea name="attr_Semblance"></textarea>
+
+	</div>
+
+</div>
