@@ -10,7 +10,7 @@
 
 	<div class="sheet-col">
 		<p style="text-align: center;">
-			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 100px;" />
+			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 150px;" />
 		</p>
 	</div>
 
@@ -18,6 +18,14 @@
 
 		<label>Race:</label><input type="text" name="attr_race" />
 		<label>Gender:</label><input type="text" name="attr_gender" />
+		<div class="row">
+            <span>Whisper rolls to GM:</span>
+            <select name="attr_wtype">
+                <option value="">Never Whisper Rolls</option>
+                <option value="?{Whisper?|Public Roll,|Whisper Roll,/w gm }">Query Whisper</option>
+                <option value="/w gm ">Always Whisper Rolls</option>
+            </select>
+        </div>
 
 	</div>
 
@@ -35,37 +43,44 @@
         <td>&nbsp;</td>
         <td width=1>Value</td>
         <td width=1>Bonus</td>
+		<td>&nbsp;</td>
       </tr>
       </thead>
       <tr>
         <td>Soul</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_SOUL"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_SOLbonus" value="@{SOUL} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an Soul check!}} {{Result=[[3d6 + @{SOLbonus}+ ?{Skill Bonus|0}]]}}' name='roll_SoulCheck'></button></td>
       </tr>
       <tr>
         <td>Endurance</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_ENDURANCE"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_ENDbonus" value="@{ENDURANCE} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an Endurance check!}} {{Result=[[3d6 + @{ENDbonus}+ ?{Skill Bonus|0}]]}}' name='roll_EnduranceCheck'></button></td>
       </tr>
       <tr>
         <td>Instinct</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_INSTINCT"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_INSbonus" value="@{INSTINCT} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an INSTINCT check!}} {{Result=[[3d6 + @{INSbonus}+ ?{Skill Bonus|0}]]}}' name='roll_InstinctCheck'></button></td>
       </tr>
       <tr>
         <td>Dexterity</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_DEXTERITY"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_DEXbonus" value="@{DEXTERITY} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an Dexterity check!}} {{Result=[[3d6 + @{DEXbonus}+ ?{Skill Bonus|0}]]}}' name='roll_DexterityCheck'></button></td>
       </tr>
       <tr>
         <td>Strength</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_STRENGTH"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_STRbonus" value="@{STRENGTH} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an Strength check!}} {{Result=[[3d6 + @{STRbonus}+ ?{Skill Bonus|0}]]}}' name='roll_StrengthCheck'></button></td>
       </tr>
       <tr>
         <td>Knowledge</td>
         <td><input type=number width=5 style='width: 5em;' name="attr_KNOWLEDGE"/></td>
         <td><input type=number width=5 style='width: 5em;' name="attr_KNLbonus" value="@{KNOWLEDGE} - 10" disabled="true"/>
+		<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} makes an Knowledge check!}} {{Result=[[3d6 + @{KNLbonus}+ ?{Skill Bonus|0}]]}}' name='roll_KnowledgeCheck'></button></td>
       </tr>
     </table>
         
@@ -107,7 +122,7 @@
             <tbody>
                 <tr>
                     <td>Resistance</td>
-                    <td><input type=number width=5 style='width: 5em;' name="attr_ENDbonus" disabled="true"/></td>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_ResBase" value="@{ENDbonus}" disabled="true"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_ResBonus" value="0"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_Resistance" value="@{ENDbonus} + @{ResBonus}" disabled="true"/>
                 </tr>
@@ -119,7 +134,7 @@
                 </tr>
                 <tr>
                     <td>Aura Capacity</td>
-                    <td><input type=number width=5 style='width: 5em;' name="attr_SOUL" disabled="true"/>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_AuraBase" value="@{SOLbonus}" disabled="true"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_AuraBonus" value="0"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_Aura_max" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
                 </tr>
