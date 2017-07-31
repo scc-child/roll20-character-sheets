@@ -111,6 +111,7 @@
 	</div>
 
 	<div class="sheet-col">
+		
 		<h3 style="text-align: center;">Derived Stats</h3>
         
         <table style="width: 100%;">
@@ -123,6 +124,12 @@
                 </tr>
             </thead>
             <tbody>
+				<tr>
+					<td>Dodge</td>
+					<td>&nbsp;</td>
+					<td><input type="number" name="attr_DodgeBonus"/></td>
+					<td><button type='roll' value='@{wtype}&{template:default} {{name=@{character_name} tries to Dodge!}} {{Result=[[3d6 + @{INSbonus}+ ?{Skill Bonus|@{DodgeBonus}}]]}}' name='roll_EnduranceCheck'></button></td>
+				</tr>
                 <tr>
                     <td>Resistance</td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_ResBase" value="@{ENDbonus}" disabled="true"/></td>
