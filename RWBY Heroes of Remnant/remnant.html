@@ -5,19 +5,22 @@
     	<label>Name:</label><input type="text" name="attr_character_name" />
 		<label>Remaining XP:</label><input type="number" name="attr_xp" />
 		<label>Total XP Earned:</label><input type="number" name="attr_xp_max" />
+		<label>Aura:</label><input type="number" name="attr_Aura" /><text>/ </text><input type="number" name="attr_Aura_max" value="attr_AuraCapacity" disabled="true"/>
 
 	</div>
 
 	<div class="sheet-col">
 		<p style="text-align: center;">
-			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 150px;" />
+			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 125px;" />
 		</p>
+		<label>Soul Points:</label><input type="number" name="attr_SoulPoints" /><text>/ </text><input type="number" name="attr_SoulPoints_max" value="attr_SoulCap" disabled="true"/>
 	</div>
 
 	<div class="sheet-col">
 
 		<label>Race:</label><input type="text" name="attr_race" />
 		<label>Gender:</label><input type="text" name="attr_gender" />
+		<label>Armor Dice:</label><input type="number" name="attr_ArmorDice"/><text>/ </text><input type="number" name="attr_ArmorDice_max"/>
 		<div class="row">
             <span>Whisper rolls to GM:</span>
             <select name="attr_wtype">
@@ -130,19 +133,19 @@
                     <td>Resolve</td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_BaseResolve" value="5 + @{ENDbonus}" disabled="true"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_InjBonus" value="0"/></td>
-                    <td><input type=number width=5 style='width: 5em;' name="attr_Injuries_max" value="@{BaseResolve} + @{InjBonus}" disabled="true"/>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_Resolve" value="@{BaseResolve} + @{InjBonus}" disabled="true"/>
                 </tr>
                 <tr>
                     <td>Aura Capacity</td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_AuraBase" value="@{SOLbonus}" disabled="true"/></td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_AuraBonus" value="0"/></td>
-                    <td><input type=number width=5 style='width: 5em;' name="attr_Aura_max" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_AuraCapacity" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
                 </tr>
                 <tr>
                     <td>Max Soul Points</td>
                     <td>&nbsp;</td>
                     <td><input type=number width=5 style='width: 5em;' name="attr_SPbonus" value="0"/></td>
-                    <td><input type=number width=5 style='width: 5em;' name="attr_SoulPoints_max" value="1 + @{SPbonus}" disabled="true"/>
+                    <td><input type=number width=5 style='width: 5em;' name="attr_SoulCap" value="1 + @{SPbonus}" disabled="true"/>
                 </tr>
                 <tr>
                     <td>Speed</td>
@@ -179,12 +182,32 @@
 
 		<h3>Injuries</h3>
         
-        <label>Total:</label><input type="number" name="attr_Injuries"/> <text>/ </text><input type="number" name="attr_Injuries_max" disabled="true"/>
+        <label>Total:</label><input type="number" name="attr_Injuries"/> <text>/ </text><input type="number" name="attr_Injuries_max" value="@{Resolve}" disabled="true"/>
 		<textarea name="attr_InjuryDetails"></textarea>
 		
 		<h3>Semblance</h3>
 
 		<textarea name="attr_Semblance"></textarea>
+		
+		<h3>Semblance Augmentations</h3>
+		<fieldset class="repeating_semblance">
+            <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rank</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<td><input type="text" name="attr_saugname"/></td>
+							<td><input type="number" name="attr_sauglevel" /></td>
+							<td><textarea name="attr_saugperks"></textarea></td>
+						</tr>
+                    </tbody>
+                </table>
+        </fieldset>
 
 	</div>
 
