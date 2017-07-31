@@ -5,7 +5,7 @@
     	<label>Name:</label><input type="text" name="attr_character_name" />
 		<label>Remaining XP:</label><input type="number" name="attr_xp" />
 		<label>Total XP Earned:</label><input type="number" name="attr_xp_max" />
-		<label>Aura:</label><input type="number" name="attr_Aura" /><text>/ </text><input type="number" name="attr_Aura_max" value="attr_AuraCapacity" disabled="true"/>
+		<label>Aura:</label><input type="number" name="attr_Aura" /><text>/ </text><input type="number" name="attr_Aura_max" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
 
 	</div>
 
@@ -13,7 +13,7 @@
 		<p style="text-align: center;">
 			<img src="https://vignette4.wikia.nocookie.net/rwby/images/d/d0/RWBYHighResolutionLogo.jpg" style="max-height: 125px;" />
 		</p>
-		<label>Soul Points:</label><input type="number" name="attr_SoulPoints" /><text>/ </text><input type="number" name="attr_SoulPoints_max" value="attr_SoulCap" disabled="true"/>
+		<label>Soul Points:</label><input type="number" name="attr_SoulPoints" /><text>/ </text><input type="number" name="attr_SoulPoints_max" value="1 + @{SPbonus}" disabled="true"/>
 	</div>
 
 	<div class="sheet-col">
@@ -169,13 +169,13 @@
                     <td>Aura Capacity</td>
                     <td><input type=number name="attr_AuraBase" value="@{SOLbonus}" disabled="true"/></td>
                     <td><input type=number name="attr_AuraBonus" value="0"/></td>
-                    <td><input type=number name="attr_AuraCapacity" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
+                    <td><input type=number name="attr_Aura_max" value="@{SOUL} + @{AuraBonus}" disabled="true"/>
                 </tr>
                 <tr>
                     <td>Max Soul Points</td>
                     <td>&nbsp;</td>
                     <td><input type=number name="attr_SPbonus" value="0"/></td>
-                    <td><input type=number name="attr_SoulCap" value="1 + @{SPbonus}" disabled="true"/>
+                    <td><input type=number name="attr_SoulPoints_max" value="1 + @{SPbonus}" disabled="true"/>
                 </tr>
                 <tr>
                     <td>Speed</td>
