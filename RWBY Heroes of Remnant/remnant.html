@@ -96,6 +96,7 @@
                             <th>Name</th>
                             <th>Rank</th>
                             <th>Description</th>
+							<th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -103,7 +104,7 @@
 							<td><input type="text" width=5 style='width: 5em;' name="attr_skillname"/></td>
 							<td><input type="number" name="attr_skilllevel" /></td>
 							<td><textarea name="attr_skillperks"></textarea></td>
-							<td><button type='roll' value='test' name='roll_skillinfo'></button></td>
+							<td><button type='roll' value='&{template:default} {{name=@{skillname}}} {{Level= @(skilllevel}} {{@{attr_skillperks}}}'' name='roll_skillinfo'></button></td>
 						</tr>
                     </tbody>
                 </table>
@@ -111,7 +112,24 @@
 		
 		<h3>Manoeuvres</h3>
 
-		<textarea name="attr_Manoeuvres"></textarea>
+		<fieldset class="repeating_mano">
+            <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+							<th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr>
+							<td><input type="text" width=5 style='width: 5em;' name="attr_manoname"/></td>
+							<td><input type="text" name="attr_manodesc" /></td>
+							<td><button type='roll' value='&{template:default} {{name=@{manoname}}} {{@{attr_manodesc}}}'' name='roll_manoinfo'></button></td>
+						</tr>
+                    </tbody>
+                </table>
+        </fieldset>
 
 	</div>
 
